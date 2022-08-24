@@ -53,8 +53,8 @@
 
         <!-- HEADER -->
         <header class="section">
-            <div class="inner">
-                <div class="menu-group">
+            <div class="inner clearfix">
+                <div class="menu-group float--left">
                     <div class="logo"><a href="index.html">GitHub</a></div>
                     <ul class="main-menu">
                         <li><a href="#">Personal</a></li>
@@ -64,16 +64,21 @@
                     </ul>
                 </div>
 
-                <div class="sign-group">
+                <div class="sign-group float--right">
                     <div class="btn-group">
-                        <a href="#" class="btn">Sign in</a>
-                        <a href="#" class="btn btn-primary">Sign up</a>
+                        <a href="#" class="btn sign-in">Sign in</a>
+                        <a href="#" class="btn btn--primary sign-up">Sign up</a>
 
                     </div>
-                    <form action="">
-
+                    <form id="search-form" method="post" action="">
+                        <input type="text" id="search" class="input--text" placeholder="Search GitHub">
+                        <input type="submit" value="submit">
                     </form>
                     <ul class="sub-menu">
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Surpport</a></li>
+
 
                     </ul>
                 </div>
