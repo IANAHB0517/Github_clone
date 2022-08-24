@@ -112,3 +112,7 @@ header .main-menu li a {
     padding:10px;
     color:#3c4146;
 }
+
+header .main-menu li a:hover{
+    color:#4078c0;
+}
