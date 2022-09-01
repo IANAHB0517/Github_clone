@@ -1,7 +1,7 @@
 var http = require('http');
 var fs = require('fs');
 var url = require('url');
-var qust = require('querystring');
+var qs = require('querystring');
 
 function templateHTML(title, list, body, control){
   return `
@@ -90,7 +90,7 @@ var app = http.createServer(function(request,response){
       body= body + data;
     });
     request.on('end', function(){
-      var post = qust.parse(body);
+      var post = qs.parse(body);
       var title = post.title;
       var description = post.description;
       fs.writeFile(`data/${title}`,description, `utf8`,function(err){
@@ -137,6 +137,27 @@ var app = http.createServer(function(request,response){
         });
       });
 
+  } else if(pathname === `/update_process`){
+    var body ='';
+    request.on('data',function(data){
+      body= body + data;
+    });
+    request.on('end', function(){ 
+      var post = qs.parse(body);
+      var id = post.id;
+      var title = post.title;
+      var description = post.description;
+      fs.rename(`data/${id}`, `data/${title}`, function(error){
+        fs.writeFile(`data/${title}`,description, `utf8`,function(err){
+          response.writeHead(302, {Location:`/?id=${title}`});
+          response.end('success');
+        })
+      });
+      console.log(post);
+     
+      
+    });
+
   } else {
 
     response.writeHead(404);
@@ -145,6 +166,6 @@ var app = http.createServer(function(request,response){
   }
    
 
-  
+
 });
 app.listen(3000)
