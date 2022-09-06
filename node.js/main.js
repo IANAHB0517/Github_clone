@@ -3,7 +3,7 @@ var fs = require('fs');
 var url = require('url');
 var qs = require('querystring');
 var template = require('./lib/template.js');
-// var ModRD = require('./lib/readdir.js');
+var ModRD = require('./lib/readdir.js');
 var path = require('path');
 const sanitizeHtml = require('sanitize-html');
 
