@@ -3,9 +3,7 @@ var fs = require('fs');
 var url = require('url');
 var qs = require('querystring');
 var template = require('./lib/template.js');
-// var ModRD = require('./lib/readdir.js');
-var path = require('path');
-const sanitizeHtml = require('sanitize-html');
+var ModRD = require('./lib/readdir.js');
 
 
 
@@ -17,46 +15,13 @@ var app = http.createServer(function(request,response){
   var queryData = url.parse(_url,true).query;
   var pathname = url.parse(_url, true).pathname;
     
-if(pathname ==='/'){ 
+ if(pathname ==='/'){ 
     if(queryData.id === undefined){
-      fs.readdir('./data', function(error, filelist){
-   
-        var title = 'welcome';
-        var description = 'Hello, Node.Js';
-        var list = template.list(filelist);
-        var html = template.HTML(title, list,
-          `<h2>${title}</h2>${description}`,
-          `<a href="create">Create</a>`);
-    
-        response.end(html);
-        response.writeHead(200);
-        
-        })
+      ModRD.ReadDir();
       }
 
     else {
-      fs.readdir('./data',function(error, filelist){
-        var filteredId = path.parse(queryData.id).base;
-        fs.readFile(`data/${filteredId}`, 'utf8', function(err, description){
-          var title = queryData.id;
-          var sanitizedTitle = sanitizeHtml(title);
-          var sanitizedDescription = sanitizeHtml(description, {
-            allowedTags : ['script']
-          });
-          var list = template.list(filelist);
-          var html = template.HTML(sanitizedTitle, list,
-            `<h2>${sanitizedTitle}</h2>${sanitizedDescription}`,
-          `<a href="create">Create</a>
-          <a href="/update?id=${sanitizedTitle}">update</a>
-          <form action="delete_process" method="post" onsubmit="sdsd">
-            <input type="hidden" name="id" value="${sanitizedTitle}">
-            <input type="submit" value="delete">
-          </form>`);
-          response.end(html);
-          response.writeHead(200);
-          });
-        })
-
+      ModRD.UnReadDir();
       }
 
   } else if (pathname === '/create'){
@@ -97,8 +62,7 @@ if(pathname ==='/'){
 
   } else if (pathname === `/updata`){
     fs.readdir('./data', function(error, filelist){
-      var filteredId = path.parse(queryData.id).base;
-      fs.readFile(`data/${filteredId}`, 'utf8', function(err, description){
+      fs.readFile(`data/${queryData.id}`, 'utf8', function(err, description){
         var title = queryData.id;
         var list = template.list(filelist);
         var html = template.HTML(title, list, `<h2>${title}</h2>${description}`,
@@ -110,8 +74,7 @@ if(pathname ==='/'){
 
   } else if(pathname === `/update`){
     fs.readdir('./data', function(error, filelist){
-      var filteredId = path.parse(queryData.id).base;
-      fs.readFile(`data/${filteredId}`, 'utf8', function(err, description){
+      fs.readFile(`data/${queryData.id}`, 'utf8', function(err, description){
         var title = queryData.id;
         var list = template.list(filelist);
         var html = template.HTML(title, list,
@@ -159,8 +122,7 @@ if(pathname ==='/'){
     request.on('end', function(){ 
       var post = qs.parse(body);
       var id = post.id;
-      var filteredId = path.parse(id).base;
-      fs.unlink(`data/${filteredId}`, function(error){
+      fs.unlink(`data/${id}`, function(error){
         response.writeHead(302, {Location:`/`});
         response.end();
       })
