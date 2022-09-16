@@ -1,0 +1,1 @@
+Hi This is my Learning Log Please don't mock me haha 
