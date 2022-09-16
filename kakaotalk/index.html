@@ -4,22 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to kakaotalk</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Welcome to kakao Clone</title>
 </head>
 <body>
     <div class="status-bar">
         <div class="status-bar__column">
             <span>No Service</span>
-            <!-- To do : Wifi Icon -->
+            <i class="fa-solid fa-wifi"></i>
         </div>            
         <div class="status-bar__column">
             <span>18:43</span>
         </div>
         <div class="status-bar__column">
-            <span>110%</span>
-            <!-- Battery Icon -->
-            <!-- Lightning Icon -->
+            <span>5%</span>
+            <i class="fa-solid fa-battery-quarter fa-2x"></i>
+            <i class="fa-solid fa-bolt"></i>
         </div>
     </div>
+    <header class="welcome-header">
+        <h1 class="welcome-header__title">Welcome to kakao Clone</h1>
+        <p class="welcome-header__text">If you have a kakao Acoount, log in with you email or Phone number.</p>
+    </header>
+
+    <form id="login-form" action="">
+        <input type="text" placeholder="Email or Phone number">
+        <input type="password" placeholder="Password">
+        <input type="submit" value="Log in">
+        <a href="#">Find kakao Account or Password</a>
+    </form>
+    
+
+    <script src="https://kit.fontawesome.com/7418948509.js" crossorigin="anonymous"></script>
 </body>
 </html>
