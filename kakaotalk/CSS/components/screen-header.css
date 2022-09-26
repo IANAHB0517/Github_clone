@@ -19,8 +19,9 @@
     position:relative;
 }
 
+
 .header__notification {
     position:absolute;
-    left:68px;
+    left: 116px;
     bottom:25px;
 }
