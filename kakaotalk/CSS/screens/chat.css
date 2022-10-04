@@ -108,7 +108,12 @@
     position:relative;
 }
 
+.reply i {
+    opacity:0.5;
+}
+
 .reply input {
+    padding:15px;
     height:30px;
     width:100%;
     border: var(--main-border);
@@ -135,4 +140,13 @@
     height:30px;
     border-radius: 20px;;
 
+}
+
+.reply__column button i {
+    opacity: 1;
+}
+
+.reply__column button:focus,
+.reply__column button:active {
+    outline:none;
 }
