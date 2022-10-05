@@ -96,3 +96,23 @@
 .open-post__photo__likes span {
     margin-left:5px;
 }
+
+@keyframes heartBeat {
+    0%{
+        color:white;
+    }
+
+    50%{
+        color:tomato;
+    }
+
+    100%{
+        color:white;
+    }
+}
+
+
+
+.open-post__photo__likes:hover i {
+    animation: heartbeat 2s linear infinite;
+}
