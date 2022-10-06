@@ -20,6 +20,10 @@
 @import "screens/setting.css";
 @import "screens/chat.css";
 
+*{
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Open Sans", sans-serif;
     height:1000vh;
@@ -32,6 +36,3 @@ body {
     padding: 0px var(--horizontal-space);
 }
 
-/* *{
-    box-sizing: border-box;
-} */

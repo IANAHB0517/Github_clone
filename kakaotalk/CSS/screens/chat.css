@@ -18,11 +18,30 @@
     
 }
 
+@keyframes fadein {
+    0% {
+        opacity:0;
+        transform:none;
+    }
+
+    1% {
+        transform: translateY(30px);
+        opacity: 0;
+
+    }
+
+    100% {
+        transform: none;
+        opacity: 1;
+    }
+}
+
 .main-chat {
     margin-top:120px;
     display:flex;
     flex-direction:column;  
     align-items:center;
+    animation: fadein 0.5s linear;
 }
 
 .chat__timestamp {
@@ -95,8 +114,9 @@
     display: flex;
     justify-content: space-between;
     padding: 5px 25px;
-    /* box-sizing:border-box; */
     align-items: center;
+    transition:all 0.3 ease-in-out;
+    
 }
 
 .reply .reply__column:first-child {
@@ -118,6 +138,7 @@
     width:100%;
     border: var(--main-border);
     border-radius:20px;
+    transition: all 0.3s ease-in-out;
     
 }
 
@@ -149,4 +170,25 @@
 .reply__column button:focus,
 .reply__column button:active {
     outline:none;
+}
+
+.reply .reply__column:first-child,
+.reply .fa-regular,
+.reply button {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-regular,
+.reply:focus-within button {
+    opacity: 0;
+}
+
+.reply:focus-within input {
+    width:95vw;
+    transform: translateX(-11%) translateY(-80px);
+}
+
+.reply:focus-within {
+    transform: translateY(80px);
 }
