@@ -36,5 +36,6 @@
 }
 
 .screen-header__icons .fa-gear:hover {
+    will-change: transform;
     animation:rotateCog 3s ease-in-out infinite;
 }

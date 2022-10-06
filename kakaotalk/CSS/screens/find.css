@@ -98,21 +98,24 @@
 }
 
 @keyframes heartBeat {
-    0%{
+    0% {
         color:white;
+        transform: none;
     }
 
-    50%{
-        color:tomato;
+    50% {
+        color:rgb(107, 16, 0);
+        transform: scale(1.5);
     }
 
-    100%{
+    100% {
         color:white;
+        transform: none;
     }
 }
 
 
 
 .open-post__photo__likes:hover i {
-    animation: heartbeat 2s linear infinite;
+    animation: heartbeat 1s linear infinite;
 }
