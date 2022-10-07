@@ -1,3 +1,0 @@
-var name = 'FTE'
-var letter = 'Cillum dolore occaecat' +name+ 'dolore ex voluptate officia esse cupidatat incididunt eu ex eu. Magna nulla ullamco' +name+ 'magna ea veniam aliquip dolore duis mollit. Officia cupidatat laboris quis incididunt id enim voluptate adipisicing cupidatat aliqua sint ipsum proident pariatur. Magna id voluptate non exercitation' +name+ ' deserunt proident mollit ex qui. Est id voluptate sit' +name+ ' ipsum excepteur.'; 
-console.log(letter);
