@@ -1,25 +1,25 @@
 /* Common */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import "reset.css";
-@import "variables.css";
+@import "./reset.css";
+@import "./variables.css";
 
 /* Components */
-@import "components/status-bar.css";
-@import "components/nav-bar.css";
-@import "components/screen-header.css";
-@import "components/user-component.css";
-@import "components/badge.css";
-@import "components/icon-row.css";
-@import "components/alt-screen-header.css";
-@import "components/no-mobile.css";
+@import "./components/status-bar.css";
+@import "./components/nav-bar.css";
+@import "./components/screen-header.css";
+@import "./components/user-component.css";
+@import "./components/badge.css";
+@import "./components/icon-row.css";
+@import "./components/alt-screen-header.css";
+@import "./components/no-mobile.css";
 
 /* Screens */
-@import "screens/login.css";
-@import "screens/friends.css";
-@import "screens/find.css";
-@import "screens/more.css";
-@import "screens/setting.css";
-@import "screens/chat.css";
+@import "./screens/login.css";
+@import "./screens/friends.css";
+@import "./screens/find.css";
+@import "./screens/more.css";
+@import "./screens/setting.css";
+@import "./screens/chat.css";
 
 *{
     box-sizing: border-box;
